@@ -17,29 +17,24 @@
 <body>
   <div class="top-ribbon">
     <span>120 ÅR AV GLÄDJE 🎉</span>
-    <div class="language-switcher" style="position: absolute; top: 50px; right: 10px; display: flex; gap: 10px;">
-    <button type="button" id="switchToSwedish" class="btn outline">Svenska</button>
-    <button type="button" id="switchToEnglish" class="btn outline">English</button>
-  </div>
   </div>
 
   <header class="hero">
-
     <div class="shine"></div>
     <h1><span class="year">40</span> + <span class="year">40</span> + <span class="year">40</span></h1>
-    <p class="tagline" data-sv="Vi fyller 120 (tillsammans) – och du är bjuden!" data-en="We are turning 120 (together) – and you are invited!">Vi fyller 120 (tillsammans) – och du är bjuden!</p>
+    <p class="tagline">Vi fyller 120 (tillsammans) – och du är bjuden!</p>
     <div class="info-badges">
       <div class="badge">
-        <div class="badge-title" data-sv="Datum" data-en="Date">Datum</div>
-        <div class="badge-text" data-sv="Lördag 25 oktober 2025" data-en="Saturday, October 25, 2025">Lördag 25 oktober 2025</div>
+        <div class="badge-title">Datum</div>
+        <div class="badge-text">Lördag 25 oktober 2025</div>
       </div>
       <div class="badge">
-        <div class="badge-title" data-sv="Plats" data-en="Location">Plats</div>
-        <div class="badge-text" data-sv="GFF‑gården, Majvallen, Göteborg" data-en="GFF‑gården, Majvallen, Gothenburg">GFF‑gården, Majvallen, Göteborg</div>
+        <div class="badge-title">Plats</div>
+        <div class="badge-text">GFF‑gården, Majvallen, Göteborg</div>
       </div>
       <div class="badge">
-        <div class="badge-title" data-sv="Tid" data-en="Time">Tid</div>
-        <div class="badge-text" data-sv="18:00 → sent" data-en="6:00 PM → late">18:00 → sent</div>
+        <div class="badge-title">Tid</div>
+        <div class="badge-text">18:00 → sent</div>
       </div>
     </div>
     <div class="cta-wrap">
@@ -61,12 +56,6 @@
       <h2>Anmälan</h2>
       <p>Fyll i formuläret nedan senast <strong>5 oktober 2025</strong> så vi kan planera mat och magi ✨</p>
 
-      <!--
-        FORM-BACKEND:
-        1) FORMEE/Forms: Ersätt action nedan med er Formspree-URL (t.ex. https://formspree.io/f/xxxx).
-        2) Netlify: Lägg till attributet data-netlify="true" och publicera på Netlify.
-        3) Google Form: Byt hela <form> mot er Google Forms-embed.
-      -->
       <form id="rsvpForm" action="https://formspree.io/f/mandlzeg" method="POST" novalidate>
         <div class="grid">
           <label> Namn
@@ -90,7 +79,6 @@
           <textarea name="ovrigt" rows="4" placeholder="Ex. ankomsttid, önskelåt, annat vi bör veta"></textarea>
         </label>
 
-        <!-- Liten GDPR-rad -->
         <p class="gdpr">Vi använder uppgifterna endast för planering av festen och raderar dem efteråt.</p>
 
         <div class="cta-wrap">
