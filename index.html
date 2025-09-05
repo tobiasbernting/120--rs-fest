@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vår 120-årsfest – 25 oktober 2025</title>
+  <meta name="description" content="Inbjudan till vår gemensamma 120-årsfest – 40+40+40! Anmäl dig här." />
+  <meta property="og:title" content="Vår 120-årsfest – 25 oktober 2025">
+  <meta property="og:description" content="Tre 40-åringar, en legendarisk kväll. Anmäl dig och fira med oss!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-ribbon">
+    <span>120 ÅR AV GLÄDJE 🎉</span>
+    <div class="language-switcher" style="position: absolute; top: 50px; right: 10px; display: flex; gap: 10px;">
+    <button type="button" id="switchToSwedish" class="btn outline">Svenska</button>
+    <button type="button" id="switchToEnglish" class="btn outline">English</button>
+  </div>
+  </div>
+
+  <header class="hero">
+
+    <div class="shine"></div>
+    <h1><span class="year">40</span> + <span class="year">40</span> + <span class="year">40</span></h1>
+    <p class="tagline" data-sv="Vi fyller 120 (tillsammans) – och du är bjuden!" data-en="We are turning 120 (together) – and you are invited!">Vi fyller 120 (tillsammans) – och du är bjuden!</p>
+    <div class="info-badges">
+      <div class="badge">
+        <div class="badge-title" data-sv="Datum" data-en="Date">Datum</div>
+        <div class="badge-text" data-sv="Lördag 25 oktober 2025" data-en="Saturday, October 25, 2025">Lördag 25 oktober 2025</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title" data-sv="Plats" data-en="Location">Plats</div>
+        <div class="badge-text" data-sv="GFF‑gården, Majvallen, Göteborg" data-en="GFF‑gården, Majvallen, Gothenburg">GFF‑gården, Majvallen, Göteborg</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title" data-sv="Tid" data-en="Time">Tid</div>
+        <div class="badge-text" data-sv="18:00 → sent" data-en="6:00 PM → late">18:00 → sent</div>
+      </div>
+    </div>
+    <div class="cta-wrap">
+      <a class="btn glossy" href="#anmalan">Anmäl dig här</a>
+      <button class="btn outline" id="addToCalendarBtn">Lägg till i kalender</button>
+    </div>
+    <div id="countdown" class="countdown" aria-live="polite"></div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Vad händer?</h2>
+      <p>Tre vänner. En <em>storslagen</em> 120-årsfest. Det blir musik, skratt, tårta och väldigt mycket nostalgi.
+      Klä dig gärna festligt med en touch av tidigt 2010-tal (tänk neon, färgblock, statement-halsband, färgglada sneakers…).</p>
+      <p>Ta med ditt bästa humör – resten fixar vi!</p>
+    </section>
+
+    <section id="anmalan" class="panel">
+      <h2>Anmälan</h2>
+      <p>Fyll i formuläret nedan senast <strong>5 oktober 2025</strong> så vi kan planera mat och magi ✨</p>
+
+      <!--
+        FORM-BACKEND:
+        1) FORMEE/Forms: Ersätt action nedan med er Formspree-URL (t.ex. https://formspree.io/f/xxxx).
+        2) Netlify: Lägg till attributet data-netlify="true" och publicera på Netlify.
+        3) Google Form: Byt hela <form> mot er Google Forms-embed.
+      -->
+      <form id="rsvpForm" action="https://formspree.io/f/mandlzeg" method="POST" novalidate>
+        <div class="grid">
+          <label> Namn
+            <input type="text" name="namn" placeholder="För- och efternamn" required />
+          </label>
+
+          <label> E‑post
+            <input type="email" name="epost" placeholder="namn@exempel.se" required />
+          </label>
+
+          <label> Hur många kommer? 
+            <input type="number" name="antal" min="1" max="10" value="1" required />
+          </label>
+
+          <label> Allergier / Specialkost
+            <input type="text" name="allergier" placeholder="Ex. nötter, gluten, laktos…" />
+          </label>
+        </div>
+
+        <label>Övrig information
+          <textarea name="ovrigt" rows="4" placeholder="Ex. ankomsttid, önskelåt, annat vi bör veta"></textarea>
+        </label>
+
+        <!-- Liten GDPR-rad -->
+        <p class="gdpr">Vi använder uppgifterna endast för planering av festen och raderar dem efteråt.</p>
+
+        <div class="cta-wrap">
+          <button type="submit" class="btn glossy">Skicka anmälan</button>
+          <button type="button" class="btn outline" id="saveLocalBtn">Spara lokalt (backup)</button>
+        </div>
+
+        <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel tips">
+      <h2>Praktiskt</h2>
+      <ul>
+        <li>Närmsta hållplats: <strong>Majvallen</strong> (spårvagn). Kort promenad till GFF‑gården.</li>
+        <li>Det finns plats för barnvagnar inne på gården.</li>
+        <li>OSA: <strong>5 oktober 2025</strong>. Hör av dig om du får förhinder.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 – Vår 120-årsfest • Byggd med kärlek, gradients och drop‑shadows</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
