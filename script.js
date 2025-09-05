@@ -94,24 +94,4 @@
       a.remove();
     }, 1000);
   });
-
-  // Language switching functionality
-  const switchToSwedish = document.getElementById('switchToSwedish');
-  const switchToEnglish = document.getElementById('switchToEnglish');
-
-  function switchLanguage(lang) {
-    document.querySelectorAll('[data-sv], [data-en]').forEach(el => {
-      if (lang === 'sv') {
-        el.textContent = el.getAttribute('data-sv');
-      } else if (lang === 'en') {
-        el.textContent = el.getAttribute('data-en');
-      }
-    });
-  }
-
-  switchToSwedish.addEventListener('click', () => switchLanguage('sv'));
-  switchToEnglish.addEventListener('click', () => switchLanguage('en'));
-
-  // Set default language to Swedish
-  switchLanguage('sv');
 })();
