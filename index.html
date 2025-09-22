@@ -63,7 +63,7 @@
       <h2>Anmälan</h2>
       <p>Fyll i formuläret nedan senast <strong>11 oktober 2025</strong> så vi kan planera mat och festligheter ✨</p>
 
-      <form id="rsvpForm" action="https://formspree.io/f/mandlzeg" method="POST" novalidate>
+      <form id="rsvpForm" action="https://formspree.io/f/mandlzeg" method="POST" novalidate onsubmit="handleFormSubmit(event)">
         <div class="grid">
           <label> Namn
             <input type="text" name="namn" placeholder="För- och efternamn" required />

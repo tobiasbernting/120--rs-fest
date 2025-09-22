@@ -42,6 +42,7 @@
         status.textContent = 'Tack! Din anmälan är mottagen.';
         localStorage.removeItem('rsvpBackup');
         form.reset();
+        window.location.href = 'thanks.html'; // Redirect on success
       }else{
         const text = await resp.text();
         throw new Error(text || 'Något gick fel.');
